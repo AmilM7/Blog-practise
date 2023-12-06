@@ -1,0 +1,61 @@
+/* Apply a reset to handle default paddings and margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the body with a nice font and some padding */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Style the main title of the blog post */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Style the category link */
+p a {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Hover effect for category link */
+p a:hover {
+    background: #0056b3;
+}
+
+/* Style the article */
+article {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* Style the 'Go Back' link */
+div a {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hover effect for 'Go Back' link */
+div a:hover {
+    background: #555;
+}

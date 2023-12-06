@@ -1,0 +1,48 @@
+/* Reset some default browser styles */
+body {
+    background: #f0f0f0; /* Set a light background color */
+    color: #333; /* Set the text color */
+    font-family: Arial, sans-serif; /* Use a common sans-serif font */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+
+/* Center the content and limit the width */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the post title */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Style the category link */
+p a {
+    color: #007bff; /* Set a link color */
+    text-decoration: none; /* Remove underline */
+}
+
+p a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Style the article content */
+article {
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 1.6; /* Increase line height for readability */
+}
+
+/* Style the "Go Back" link */
+div a {
+    color: #555; /* Set a link color */
+    text-decoration: none;
+}
+
+div a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}

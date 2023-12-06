@@ -1,9 +1,12 @@
 <?php
 
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\File;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +21,19 @@ use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 Route::get('/', function () {
 
+   /*  DB::listen(function($query) {                                         //debugging
+        logger($query->sql, $query->bindings);
+    }); */
+
+
     return view('welcome', [
-        'posts' => Post::all(),
+        'posts' => Post::latest()->with('category')->get(),
     ]);
 });
 
 
-Route::get('/post/{post}', function ($slug) {
-    $post = Post::find($slug);
+Route::get('/post/{post:slug}', function (Post $post) {
+    //$post = Post::findOrFail($post);
 
     return view('post',[
         'post' => $post,
@@ -34,3 +42,19 @@ Route::get('/post/{post}', function ($slug) {
 });
 //->where('post', '[A-z_\-]+');
 //->whereAlpha('post');  //used for validation
+
+Route::get('/category/{category:slug}', function (Category $category) {
+
+
+    return view('welcome',[
+        'posts' => $category->posts->load(['category', 'author'])
+    ]);
+    
+});
+
+Route::get('/author/{author:name}', function (User $author) {
+    return view('welcome',[
+        'posts' => $author->posts->load(['category', 'author'])
+    ]);
+    
+});

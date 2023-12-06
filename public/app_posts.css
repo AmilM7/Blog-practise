@@ -1,0 +1,66 @@
+/* Reset some default browser styles */
+body {
+    background: #f0f0f0; /* Set a light background color */
+    color: #333; /* Set the text color */
+    font-family: Arial, sans-serif; /* Use a common sans-serif font */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+}
+/* Center the content and limit the width */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center; /* Center align all content within the container */
+}
+
+/* Style the post headings */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+     /* Left align the h1 title */
+}
+
+/* Style the post links */
+h2 a {
+    color: #007bff; /* Set a link color */
+    text-decoration: none; /* Remove underline */
+}
+
+h2 a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Style the category links */
+p a {
+    color: #555; /* Set a category link color */
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Style the article excerpts */
+article {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Add space between posts */
+.mainDiv + .mainDiv {
+    margin-top: 20px;
+    border-top: 1px solid #ddd; /* Add a light border between posts */
+}
+
+/* Add spacing within posts */
+.mainDiv {
+    padding: 20px;
+    background-color: #fff; /* Set a white background for posts */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Add space between excerpts and categories */
+article + p {
+    margin-top: 10px;
+}
