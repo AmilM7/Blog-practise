@@ -1,12 +1,13 @@
 <?php
 
-use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\File;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,42 +20,43 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [PostController::class, 'index'])->name('home');
 
-   /*  DB::listen(function($query) {                                         //debugging
-        logger($query->sql, $query->bindings);
-    }); */
+Route::get('/post/{post:slug}', [PostController::class, 'show']);
 
 
-    return view('welcome', [
-        'posts' => Post::latest()->with('category')->get(),
-    ]);
-});
 
 
-Route::get('/post/{post:slug}', function (Post $post) {
-    //$post = Post::findOrFail($post);
 
-    return view('post',[
-        'post' => $post,
-    ]);
-    
-});
-//->where('post', '[A-z_\-]+');
-//->whereAlpha('post');  //used for validation
 
-Route::get('/category/{category:slug}', function (Category $category) {
 
+
+
+
+
+
+/* Route::get('/category/{category:slug}', function (Category $category) {
 
     return view('welcome',[
-        'posts' => $category->posts->load(['category', 'author'])
+        'posts' => $category->posts->load(['category', 'author']),
+        'currentCategory' => $category,
+        'categories' => Category::all(),
     ]);
     
-});
+})->name('category');
 
 Route::get('/author/{author:name}', function (User $author) {
     return view('welcome',[
         'posts' => $author->posts->load(['category', 'author'])
     ]);
     
-});
+}); */
+
+
+
+/*  DB::listen(function($query) {                                         //debugging
+     logger($query->sql, $query->bindings);
+}); */
+
+ //->where('post', '[A-z_\-]+');
+//->whereAlpha('post');  //used for validation
