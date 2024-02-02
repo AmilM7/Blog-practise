@@ -1,4 +1,4 @@
-@extends('components/layout_post')
+@extends('layouts/layout_post')
 
 @section('content')
 

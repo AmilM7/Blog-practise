@@ -1,4 +1,4 @@
-@extends('components/layout')
+@extends('layouts/layout')
 
 @section('content')
 <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
